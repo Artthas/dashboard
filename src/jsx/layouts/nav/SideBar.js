@@ -132,11 +132,23 @@ class SideBar extends Component {
         "form-pickers",
         "form-validation-jquery",
       ],
-      table = [
-        "table-bootstrap-basic", 
-        "table-datatable-basic",
-        "table-sorting",
-        "table-filtering",
+      googleTrendsTable = [
+        "google-trends-table"
+      ],
+      howToInGtrends = [
+        "how-to-in-gtrends"
+      ],
+      topInGtrends = [
+        "top-in-gtrends"
+      ],
+      googleNews = [
+        "google-news"
+      ],
+      reddit = [
+        "reddit"
+      ],
+      twitter = [
+        "twitter"
       ],
       pages = [
         "page-register",
@@ -160,7 +172,176 @@ class SideBar extends Component {
       <div className="deznav">
         <PerfectScrollbar className="deznav-scroll">
           <MM className="metismenu" id="menu">
-            <li className={`${dashBoard.includes(path) ? "mm-active" : ""}`}>
+            <li className={`${googleTrendsTable.includes(path) ? "mm-active" : ""}`}>
+              <Link className="has-arrow ai-icon" to="#" >
+                <i className="flaticon-381-network"></i>
+                <span className="nav-text">Google Trends</span>
+              </Link>
+              <ul >
+                <li>
+                    <Link className={`${  path === "google-trends-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/google-trends-table">
+                        Australia
+                    </Link>
+                </li>
+                <li>
+                    <Link className={`${ path === "google-trends-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/google-trends-table">
+                        United Kingdom
+                    </Link>
+                </li>
+                <li>
+                    <Link className={`${ path === "google-trends-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/google-trends-table">
+                        United States
+                    </Link>
+                </li>
+                <li>
+                    <Link className={`${ path === "google-trends-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/google-trends-table">
+                        New Zealand
+                    </Link>
+                </li>
+              </ul>
+            </li>
+            <li className={`${howToInGtrends.includes(path) ? "mm-active" : ""}`}>
+              <Link className="has-arrow ai-icon" to="#" >
+                <i className="flaticon-381-network"></i>
+                <span className="nav-text">"How to" in gtrends</span>
+              </Link>
+              <ul >
+                <li>
+                    <Link className={`${  path === "how-to-in-gtrends-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/how-to-in-gtrends-table">
+                        Australia
+                    </Link>
+                </li>
+                <li>
+                    <Link className={`${ path === "how-to-in-gtrends-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/how-to-in-gtrends-table">
+                        United Kingdom
+                    </Link>
+                </li>
+                <li>
+                    <Link className={`${ path === "how-to-in-gtrends-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/how-to-in-gtrends-table">
+                        United States
+                    </Link>
+                </li>
+                <li>
+                    <Link className={`${ path === "how-to-in-gtrends-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/how-to-in-gtrends-table">
+                        New Zealand
+                    </Link>
+                </li>
+              </ul>
+            </li>
+            <li className={`${topInGtrends.includes(path) ? "mm-active" : ""}`}>
+              <Link className="has-arrow ai-icon" to="#" >
+                <i className="flaticon-381-network"></i>
+                <span className="nav-text">"Top" in gtrends</span>
+              </Link>
+              <ul >
+                <li>
+                    <Link className={`${  path === "top-in-gtrends-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/top-in-gtrends-table"
+                    >
+                        Australia
+                    </Link>
+                </li>
+                <li>
+                    <Link className={`${ path === "top-in-gtrends-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/top-in-gtrends-table">
+                        United Kingdom
+                    </Link>
+                </li>
+                <li>
+                    <Link className={`${ path === "top-in-gtrends-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/top-in-gtrends-table">
+                        United States
+                    </Link>
+                </li>
+                <li>
+                    <Link className={`${ path === "top-in-gtrends-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/top-in-gtrends-table">
+                        New Zealand
+                    </Link>
+                </li>
+              </ul>
+            </li>
+            <li className={`${googleNews.includes(path) ? "mm-active" : ""}`}>
+              <Link className="has-arrow ai-icon" to="#" >
+                <i className="flaticon-381-network"></i>
+                <span className="nav-text">Google News</span>
+              </Link>
+              <ul >
+                <li>
+                    <Link className={`${  path === "google-news-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/google-news-table">
+                        Australia
+                    </Link>
+                </li>
+                <li>
+                    <Link className={`${ path === "google-news-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/google-news-table">
+                        United Kingdom
+                    </Link>
+                </li>
+                <li>
+                    <Link className={`${ path === "google-news-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/google-news-table">
+                        United States
+                    </Link>
+                </li>
+                <li>
+                    <Link className={`${ path === "google-news-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/google-news-table">
+                        New Zealand
+                    </Link>
+                </li>
+              </ul>
+            </li>
+            <li className={`${reddit.includes(path) ? "mm-active" : ""}`}>
+              <Link className="has-arrow ai-icon" to="#" >
+                <i className="flaticon-381-network"></i>
+                <span className="nav-text">Reddit</span>
+              </Link>
+              <ul >
+                <li>
+                    <Link className={`${  path === "reddit-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/reddit-table">
+                        Australia
+                    </Link>
+                </li>
+                <li>
+                    <Link className={`${ path === "reddit-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/reddit-table">
+                        United Kingdom
+                    </Link>
+                </li>
+                <li>
+                    <Link className={`${ path === "reddit-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/reddit-table">
+                        United States
+                    </Link>
+                </li>
+                <li>
+                    <Link className={`${ path === "reddit-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/reddit-table">
+                        New Zealand
+                    </Link>
+                </li>
+              </ul>
+            </li>
+            <li className={`${twitter.includes(path) ? "mm-active" : ""}`}>
+              <Link className="has-arrow ai-icon" to="#">
+                <i className="flaticon-381-network"></i>
+                <span className="nav-text">Twitter</span>
+              </Link>
+              <ul >
+                <li>
+                    <Link className={`${  path === "twitter-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/twitter-table">
+                        Australia
+                    </Link>
+                </li>
+                <li>
+                    <Link className={`${ path === "twitter-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/twitter-table">
+                        United Kingdom
+                    </Link>
+                </li>
+                <li>
+                    <Link className={`${ path === "twitter-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/twitter-table">
+                        United States
+                    </Link>
+                </li>
+                <li>
+                    <Link className={`${ path === "twitter-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/twitter-table">
+                        New Zealand
+                    </Link>
+                </li>
+              </ul>
+            </li>
+            {/*<li className={`${dashBoard.includes(path) ? "mm-active" : ""}`}>
               <Link className="has-arrow ai-icon" to="#" >
                 <i className="flaticon-381-networking"></i>
                 <span className="nav-text">Dashboard</span>
@@ -624,7 +805,7 @@ class SideBar extends Component {
 				<li>
 					<Link className={`${path === "uc-lightgallery" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/uc-lightgallery">Light Gallery</Link>
                 </li>
-                {/* <li><Link className={`${path === "posts" ? "mm-active" : ""}`} to="/posts">Posts</Link></li> */}
+                  <li><Link className={`${path === "posts" ? "mm-active" : ""}`} to="/posts">Posts</Link></li>
               </ul>
             </li>
             <li className={`${redux.includes(path) ? "mm-active" : ""}`}>
@@ -636,7 +817,7 @@ class SideBar extends Component {
                     <li><Link className={`${path === "form-redux" ? "mm-active" : ""}`} to="/form-redux">Redux Form</Link></li>
                     <li><Link className={`${path === "form-redux-wizard" ? "mm-active" : ""}`} to="/form-redux-wizard">Wizard Form</Link></li>
                 </ul>
-            </li>    
+            </li>
             <li className={`${widget.includes(path) ? "mm-active" : ""}`}>
               <Link to="widget-basic" className="ai-icon" >
                 <i className="flaticon-381-settings-2"></i>
@@ -757,18 +938,18 @@ class SideBar extends Component {
                     </Link>
                 </li>
               </ul>
-            </li>
+            </li>*/}
           </MM>
-			<div className="plus-box">
+			{/*<div className="plus-box">
 				<p className="fs-13 font-w300 mb-4">Organize your menus through button bellow</p>
 				<Link className="btn bg-white text-black btn-rounded d-block" to="#">+Add Menus</Link>
-			</div>
+      </div>*/}
 			<div className="copyright">
 				<p>
-				  <strong>Koki Restaurant React Dashboard</strong> © 2021 All
+				  <strong>Trends from Social Media & News Outlets</strong> © 2022 All
 				  Rights Reserved
 				</p>
-				<p>
+				{/*<p>
 				  Made with{" "}
 				  <span
 					className={`${
@@ -779,7 +960,7 @@ class SideBar extends Component {
 					}
 				  ></span>{" "}
 				  by DexignZone
-				</p>
+				</p>*/}
 			  </div>
 			</PerfectScrollbar>
       </div>

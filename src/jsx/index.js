@@ -11,8 +11,8 @@ import Nav from './layouts/nav'
 import Footer from './layouts/Footer'
 
 /// Dashboard
-import Home from "./components/Dashboard/Home/Home";
-/*import Companies from "./components/Dashboard/Companies/Companies";
+/*import Home from "./components/Dashboard/Home/Home";
+import Companies from "./components/Dashboard/Companies/Companies";
 import Analytics from "./components/Dashboard/Analytics/Analytics";
 import Review from "./components/Dashboard/Review/Review";
 import Order from "./components/Dashboard/Order/Order";
@@ -74,11 +74,16 @@ import Lightgallery from './components/PluginsMenu/Lightgallery/Lightgallery'
 
 
 /// Widget
-import Widget from './pages/Widget'
+import Widget from './pages/Widget'*/
 
 /// Table
-import DataTable from './components/table/DataTable'
-import BootstrapTable from './components/table/BootstrapTable'
+import GoogleTrendsTable from './components/tables/GoogleTrendsTable';
+import HowToInGtrendsTable from './components/tables/HowToInGtrendsTable';
+import TopInGtrendsTable from './components/tables/TopInGtrendsTable';
+import GoogleNewsTable from './components/tables/GoogleNewsTable';
+import RedditTable from './components/tables/RedditTable';
+import TwitterTable from './components/tables/TwitterTable';
+/*import BootstrapTable from './components/table/BootstrapTable'
 import SortingTable from "./components/table/SortingTable/SortingTable";
 import FilteringTable from "./components/table/FilteringTable/FilteringTable";
 
@@ -115,8 +120,8 @@ const Markup = () => {
 
   const routes = [
     /// Dashboard
-    { url: "", component: Home },
-    /*{ url: "dashboard", component: Home },
+    /*{ url: "", component: Home },
+    { url: "dashboard", component: Home },
 	  { url: "companies", component: Companies },
 	  { url: "analytics", component: Analytics },
 	  { url: "review", component: Review },
@@ -192,11 +197,16 @@ const Markup = () => {
     { url: 'form-wizard', component: Wizard },
     { url: 'form-editor-summernote', component: SummerNote },
     { url: 'form-pickers', component: Pickers },
-    { url: 'form-validation-jquery', component: jQueryValidation },
+    { url: 'form-validation-jquery', component: jQueryValidation },*/
 
     /// table
-    { url: 'table-datatable-basic', component: DataTable },
-    { url: 'table-bootstrap-basic', component: BootstrapTable },
+    { url: 'google-trends-table', component: GoogleTrendsTable },
+    { url: 'how-to-in-gtrends-table', component: HowToInGtrendsTable },
+    { url: 'top-in-gtrends-table', component: TopInGtrendsTable },
+    { url: 'google-news-table', component: GoogleNewsTable },
+    { url: 'reddit-table', component: RedditTable },
+    { url: 'twitter-table', component: TwitterTable },
+    /*{ url: 'table-bootstrap-basic', component: BootstrapTable },
     { url: 'table-filtering', component: FilteringTable },
     { url: 'table-sorting', component: SortingTable },
 
@@ -233,7 +243,7 @@ const Markup = () => {
             >
               <div
                 className={`${!pagePath ? 'container-fluid' : ''}`}
-                style={{ minHeight: window.screen.height - 60 }}
+                style={{ minHeight: window.screen.height - 60, paddingTop: 0 }}
               >
                 <Switch>
                   {routes.map((data, i) => (
