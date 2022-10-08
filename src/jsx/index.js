@@ -200,12 +200,35 @@ const Markup = () => {
     { url: 'form-validation-jquery', component: jQueryValidation },*/
 
     /// table
-    { url: 'google-trends-table', component: GoogleTrendsTable },
-    { url: 'how-to-in-gtrends-table', component: HowToInGtrendsTable },
-    { url: 'top-in-gtrends-table', component: TopInGtrendsTable },
-    { url: 'google-news-table', component: GoogleNewsTable },
-    { url: 'reddit-table', component: RedditTable },
-    { url: 'twitter-table', component: TwitterTable },
+    { url: 'google-trends-table-australia', component: GoogleTrendsTable },
+    { url: 'google-trends-table-united-kingdom', component: GoogleTrendsTable },
+    { url: 'google-trends-table-united-states', component: GoogleTrendsTable },
+    { url: 'google-trends-table-new-zealand', component: GoogleTrendsTable },
+
+    { url: 'how-to-in-gtrends-table-australia', component: HowToInGtrendsTable },
+    { url: 'how-to-in-gtrends-table-united-kingdom', component: HowToInGtrendsTable },
+    { url: 'how-to-in-gtrends-table-united-states', component: HowToInGtrendsTable },
+    { url: 'how-to-in-gtrends-table-new-zealand', component: HowToInGtrendsTable },
+
+    { url: 'top-in-gtrends-table-australia', component: TopInGtrendsTable },
+    { url: 'top-in-gtrends-table-united-kingdom', component: TopInGtrendsTable },
+    { url: 'top-in-gtrends-table-united-states', component: TopInGtrendsTable },
+    { url: 'top-in-gtrends-table-new-zealand', component: TopInGtrendsTable },
+
+    { url: 'google-news-table-australia', component: GoogleNewsTable },
+    { url: 'google-news-table-united-kingdom', component: GoogleNewsTable },
+    { url: 'google-news-table-united-states', component: GoogleNewsTable },
+    { url: 'google-news-table-new-zealand', component: GoogleNewsTable },
+
+    { url: 'reddit-table-australia', component: RedditTable },
+    { url: 'reddit-table-united-kingdom', component: RedditTable },
+    { url: 'reddit-table-united-states', component: RedditTable },
+    { url: 'reddit-table-new-zealand', component: RedditTable },
+
+    { url: 'twitter-table-australia', component: TwitterTable },
+    { url: 'twitter-table-united-kingdom', component: TwitterTable },
+    { url: 'twitter-table-united-states', component: TwitterTable },
+    { url: 'twitter-table-new-zealand', component: TwitterTable },
     /*{ url: 'table-bootstrap-basic', component: BootstrapTable },
     { url: 'table-filtering', component: FilteringTable },
     { url: 'table-sorting', component: SortingTable },

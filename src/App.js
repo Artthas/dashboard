@@ -31,7 +31,7 @@ function App (props) {
             <Route path='/page-forgot-password' component={ForgotPassword} />
         </Switch>
     );
-    if (props.isAuthenticated) {
+    if (true/*props.isAuthenticated*/) {
 		return (
 			<>
                 <Suspense fallback={

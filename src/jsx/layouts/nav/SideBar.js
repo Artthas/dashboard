@@ -133,22 +133,40 @@ class SideBar extends Component {
         "form-validation-jquery",
       ],
       googleTrendsTable = [
-        "google-trends-table"
+        "google-trends-table-australia",
+        "google-trends-table-united-kingdom",
+        "google-trends-table-united-states",
+        "google-trends-table-new-zealand",
       ],
       howToInGtrends = [
-        "how-to-in-gtrends"
+        "how-to-in-gtrends-table-australia",
+        "how-to-in-gtrends-table-united-kingdom",
+        "how-to-in-gtrends-table-united-states",
+        "how-to-in-gtrends-table-new-zealand",
       ],
       topInGtrends = [
-        "top-in-gtrends"
+        "top-in-gtrends-table-australia",
+        "top-in-gtrends-table-united-kingdom",
+        "top-in-gtrends-table-united-states",
+        "top-in-gtrends-table-new-zealand",
       ],
       googleNews = [
-        "google-news"
+        "google-news-table-australia",
+        "google-news-table-united-kingdom",
+        "google-news-table-united-states",
+        "google-news-table-new-zealand",
       ],
       reddit = [
-        "reddit"
+        "reddit-table-australia",
+        "reddit-table-united-kingdom",
+        "reddit-table-united-states",
+        "reddit-table-new-zealand",
       ],
       twitter = [
-        "twitter"
+        "twitter-table-australia",
+        "twitter-table-united-kingdom",
+        "twitter-table-united-states",
+        "twitter-table-new-zealand",
       ],
       pages = [
         "page-register",
@@ -179,22 +197,22 @@ class SideBar extends Component {
               </Link>
               <ul >
                 <li>
-                    <Link className={`${  path === "google-trends-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/google-trends-table">
+                    <Link className={`${  path === "google-trends-table-australia" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/google-trends-table-australia">
                         Australia
                     </Link>
                 </li>
                 <li>
-                    <Link className={`${ path === "google-trends-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/google-trends-table">
+                    <Link className={`${ path === "google-trends-table-united-kingdom" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/google-trends-table-united-kingdom">
                         United Kingdom
                     </Link>
                 </li>
                 <li>
-                    <Link className={`${ path === "google-trends-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/google-trends-table">
+                    <Link className={`${ path === "google-trends-table-united-states" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/google-trends-table-united-states">
                         United States
                     </Link>
                 </li>
                 <li>
-                    <Link className={`${ path === "google-trends-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/google-trends-table">
+                    <Link className={`${ path === "google-trends-table-new-zealand" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/google-trends-table-new-zealand">
                         New Zealand
                     </Link>
                 </li>
@@ -207,22 +225,22 @@ class SideBar extends Component {
               </Link>
               <ul >
                 <li>
-                    <Link className={`${  path === "how-to-in-gtrends-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/how-to-in-gtrends-table">
+                    <Link className={`${  path === "how-to-in-gtrends-table-australia" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/how-to-in-gtrends-table-australia">
                         Australia
                     </Link>
                 </li>
                 <li>
-                    <Link className={`${ path === "how-to-in-gtrends-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/how-to-in-gtrends-table">
+                    <Link className={`${ path === "how-to-in-gtrends-table-united-kingdom" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/how-to-in-gtrends-table-united-kingdom">
                         United Kingdom
                     </Link>
                 </li>
                 <li>
-                    <Link className={`${ path === "how-to-in-gtrends-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/how-to-in-gtrends-table">
+                    <Link className={`${ path === "how-to-in-gtrends-table-united-states" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/how-to-in-gtrends-table-united-states">
                         United States
                     </Link>
                 </li>
                 <li>
-                    <Link className={`${ path === "how-to-in-gtrends-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/how-to-in-gtrends-table">
+                    <Link className={`${ path === "how-to-in-gtrends-table-new-zealand" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/how-to-in-gtrends-table-new-zealand">
                         New Zealand
                     </Link>
                 </li>
@@ -235,23 +253,23 @@ class SideBar extends Component {
               </Link>
               <ul >
                 <li>
-                    <Link className={`${  path === "top-in-gtrends-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/top-in-gtrends-table"
+                    <Link className={`${  path === "top-in-gtrends-table-australia" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/top-in-gtrends-table-australia"
                     >
                         Australia
                     </Link>
                 </li>
                 <li>
-                    <Link className={`${ path === "top-in-gtrends-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/top-in-gtrends-table">
+                    <Link className={`${ path === "top-in-gtrends-table-united-kingdom" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/top-in-gtrends-table-united-kingdom">
                         United Kingdom
                     </Link>
                 </li>
                 <li>
-                    <Link className={`${ path === "top-in-gtrends-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/top-in-gtrends-table">
+                    <Link className={`${ path === "top-in-gtrends-table-united-states" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/top-in-gtrends-table-united-states">
                         United States
                     </Link>
                 </li>
                 <li>
-                    <Link className={`${ path === "top-in-gtrends-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/top-in-gtrends-table">
+                    <Link className={`${ path === "top-in-gtrends-table-new-zealand" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/top-in-gtrends-table-new-zealand">
                         New Zealand
                     </Link>
                 </li>
@@ -264,22 +282,22 @@ class SideBar extends Component {
               </Link>
               <ul >
                 <li>
-                    <Link className={`${  path === "google-news-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/google-news-table">
+                    <Link className={`${  path === "google-news-table-australia" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/google-news-table-australia">
                         Australia
                     </Link>
                 </li>
                 <li>
-                    <Link className={`${ path === "google-news-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/google-news-table">
+                    <Link className={`${ path === "google-news-table-united-kingdom" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/google-news-table-united-kingdom">
                         United Kingdom
                     </Link>
                 </li>
                 <li>
-                    <Link className={`${ path === "google-news-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/google-news-table">
+                    <Link className={`${ path === "google-news-table-united-states" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/google-news-table-united-states">
                         United States
                     </Link>
                 </li>
                 <li>
-                    <Link className={`${ path === "google-news-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/google-news-table">
+                    <Link className={`${ path === "google-news-table-new-zealand" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/google-news-table-new-zealand">
                         New Zealand
                     </Link>
                 </li>
@@ -292,22 +310,22 @@ class SideBar extends Component {
               </Link>
               <ul >
                 <li>
-                    <Link className={`${  path === "reddit-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/reddit-table">
+                    <Link className={`${  path === "reddit-table-australia" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/reddit-table-australia">
                         Australia
                     </Link>
                 </li>
                 <li>
-                    <Link className={`${ path === "reddit-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/reddit-table">
+                    <Link className={`${ path === "reddit-table-united-kingdom" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/reddit-table-united-kingdom">
                         United Kingdom
                     </Link>
                 </li>
                 <li>
-                    <Link className={`${ path === "reddit-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/reddit-table">
+                    <Link className={`${ path === "reddit-table-united-states" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/reddit-table-united-states">
                         United States
                     </Link>
                 </li>
                 <li>
-                    <Link className={`${ path === "reddit-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/reddit-table">
+                    <Link className={`${ path === "reddit-table-new-zealand" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/reddit-table-new-zealand">
                         New Zealand
                     </Link>
                 </li>
@@ -320,22 +338,22 @@ class SideBar extends Component {
               </Link>
               <ul >
                 <li>
-                    <Link className={`${  path === "twitter-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/twitter-table">
+                    <Link className={`${  path === "twitter-table-australia" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/twitter-table-australia">
                         Australia
                     </Link>
                 </li>
                 <li>
-                    <Link className={`${ path === "twitter-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/twitter-table">
+                    <Link className={`${ path === "twitter-table-united-kingdom" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/twitter-table-united-kingdom">
                         United Kingdom
                     </Link>
                 </li>
                 <li>
-                    <Link className={`${ path === "twitter-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/twitter-table">
+                    <Link className={`${ path === "twitter-table-united-states" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/twitter-table-united-states">
                         United States
                     </Link>
                 </li>
                 <li>
-                    <Link className={`${ path === "twitter-table" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/twitter-table">
+                    <Link className={`${ path === "twitter-table-new-zealand" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/twitter-table-new-zealand">
                         New Zealand
                     </Link>
                 </li>
