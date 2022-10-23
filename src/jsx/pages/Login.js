@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { connect, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom'
-import { loadingToggleAction,loginAction,
-} from '../../store/actions/AuthActions';
+//import { loadingToggleAction, loginAction } from '../../store/actions/AuthActions';
 
 //
 import logo from '../../images/logo.png'
@@ -33,8 +32,8 @@ function Login (props) {
         if (error) {
 			return ;
 		}
-		dispatch(loadingToggleAction(true));	
-        dispatch(loginAction(email, password, props.history));
+		/*dispatch(loadingToggleAction(true));	
+      dispatch(loginAction(email, password, props.history));*/
     }
 
   return (

@@ -215,7 +215,7 @@ const Markup = () => {
     { url: 'top-in-gtrends-table-united-states', component: TopInGtrendsTable },
     { url: 'top-in-gtrends-table-new-zealand', component: TopInGtrendsTable },
 
-    { url: 'google-news-table-australia', component: GoogleNewsTable },
+    { url: 'google_news_Australia', component: GoogleNewsTable },
     { url: 'google-news-table-united-kingdom', component: GoogleNewsTable },
     { url: 'google-news-table-united-states', component: GoogleNewsTable },
     { url: 'google-news-table-new-zealand', component: GoogleNewsTable },
@@ -273,7 +273,7 @@ const Markup = () => {
                     <Route
                       key={i}
                       exact
-                      path={`/${data.url}`}
+                      path={`/${data.url}/:page`}
                       component={data.component}
                     />
                   ))}

@@ -151,7 +151,7 @@ class SideBar extends Component {
         "top-in-gtrends-table-new-zealand",
       ],
       googleNews = [
-        "google-news-table-australia",
+        "google_news_Australia",
         "google-news-table-united-kingdom",
         "google-news-table-united-states",
         "google-news-table-new-zealand",
@@ -282,7 +282,7 @@ class SideBar extends Component {
               </Link>
               <ul >
                 <li>
-                    <Link className={`${  path === "google-news-table-australia" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/google-news-table-australia">
+                    <Link className={`${  path === "google-news-table-australia" ? "mm-active" : "" }`} onClick={() => this.props.onClick()} to="/google_news_Australia/1">
                         Australia
                     </Link>
                 </li>

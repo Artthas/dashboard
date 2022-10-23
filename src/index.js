@@ -1,14 +1,28 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import App from "./App.js";
 import { BrowserRouter } from 'react-router-dom';
-import {Provider} from 'react-redux';
-import {store} from './store/store';
+import { Provider } from 'react-redux';
+import { rootReducer } from './store/root-reducer';
+import { createAPI } from './services/api';
+import { configureStore } from '@reduxjs/toolkit';
 import reportWebVitals from "./reportWebVitals";
 import SimpleReactLightbox from "simple-react-lightbox";
-import  ThemeContext  from "./context/ThemeContext"; 
+import  ThemeContext  from "./context/ThemeContext";
 
+const api = createAPI(() =>
+	store.dispatch()
+);
 
+export const store = configureStore({
+	reducer: rootReducer,
+	middleware: (getDefaultMiddleware) =>
+		getDefaultMiddleware({
+			thunk: {
+				extraArgument: {api},
+			},
+		}),
+});
 
 ReactDOM.render(
     <React.StrictMode>
