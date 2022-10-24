@@ -1,23 +1,24 @@
 import React, { useEffect } from "react";
 import { useParams, Link } from 'react-router-dom';
-import { fetchAuGoogleNewsAction } from '../../../store/api-actions';
+import { fetchGoogleNewsAction } from '../../../store/api-actions';
 import { useSelector, useDispatch } from 'react-redux';
-import { getAuGoogleNews } from '../../../store/au-data/selectors';
+import { getGoogleNews, getIsDataLoaded } from '../../../store/posts-data/selectors';
+import LoadingScreen from "../loading-screen";
+import { changeIsDataLoaded } from "../../../store/action";
 
 
 const GoogleNewsTable = () => {
-   const auGoogleNews = useSelector(getAuGoogleNews);
+   const googleNews = useSelector(getGoogleNews);
+   const isDataLoaded = useSelector(getIsDataLoaded);
 
    const dispatch = useDispatch();
-   const {page} = useParams();
+   const {country, page} = useParams();
 
    useEffect(() => {
-      dispatch(fetchAuGoogleNewsAction(page));
-    }, [page]);
+      dispatch(fetchGoogleNewsAction(page, country));
+    }, [country, page]);
 
-   console.log(page);
-
-   return (
+   return isDataLoaded ? (
       <div className="col-12">
       <div className="card">
         <div className="card-header">
@@ -43,7 +44,7 @@ const GoogleNewsTable = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {auGoogleNews.map((item, idx) => (
+                  {googleNews.map((item, idx) => (
                      <tr className="odd" role="row" key={idx}>
                         <td>{item.title}</td>
                         <td>{item.source}</td>
@@ -56,17 +57,17 @@ const GoogleNewsTable = () => {
                   Showing {page === '1' ? 1 : page > 1 ? `${page - 1}1` : ''} to {`${page}0`}
                 </div>
                 <div className="dataTables_paginate paging_simple_numbers" id="example5_paginate">
-					   <Link className="paginate_button previous disabled" to={`/google_news_Australia/${page !== '1' ? Number(page) - 1 : page}`}>
-						   Previous
-					   </Link>
-					   <span>
-							<Link to={`/google_news_Australia/${page}`} className={`paginate_button  current`}>
-								{page}
-							</Link>
-					   </span>
-					   <Link className="paginate_button next" to={`/google_news_Australia/${Number(page) + 1}`}>
-						   Next
-					   </Link>
+					        <Link className="paginate_button previous disabled" to={`/${country}/google-news/${page !== '1' ? Number(page) - 1 : page}`} onClick={() => page !== '1' ? dispatch(changeIsDataLoaded(false)) : ''}>
+						        Previous
+					        </Link>
+					        <span>
+							      <Link to={`/${country}/google-news/${page}`} className={`paginate_button  current`}>
+								      {page}
+							      </Link>
+					        </span>
+					        <Link className="paginate_button next" to={`/${country}/google-news/${Number(page) + 1}`} onClick={() => dispatch(changeIsDataLoaded(false))}>
+						        Next
+					        </Link>
                 </div>
               </div>
             </div>
@@ -74,7 +75,7 @@ const GoogleNewsTable = () => {
         </div>
       </div>
     </div>
-   );
+   ) : <LoadingScreen />;
 };
 
 export default GoogleNewsTable;

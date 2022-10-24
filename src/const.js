@@ -8,5 +8,11 @@ module.exports.AuthorizationStatus = {
 
 module.exports.APIRoute = {
   Root: '/',
-  AuGoogleNews: '/google_news_Australia',
+}
+
+module.exports.APICountries = {
+  'au': 'Australia',
+  'nz': 'New_Zealand',
+  'uk': 'United_kingdom',
+  'us': 'USA',
 }

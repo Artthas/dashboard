@@ -1,10 +1,10 @@
 import {combineReducers} from 'redux';
-import {auData} from './au-data/au-data';
+import {postsData} from './posts-data/posts-data';
 
 export const NameSpace = {
-  Au: 'AU',
+  Posts: 'POSTS',
 }
 
 export const rootReducer = combineReducers({
-  [NameSpace.Au]: auData,
+  [NameSpace.Posts]: postsData,
 });

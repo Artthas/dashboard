@@ -1,58 +1,89 @@
-import React, { Fragment } from "react";
-import PageTitle from "../../layouts/PageTitle";
-import { Table } from "react-bootstrap";
+import React, { useEffect } from "react";
+import { useParams, Link } from 'react-router-dom';
+import { fetchTwitterAction } from '../../../store/api-actions';
+import { useSelector, useDispatch } from 'react-redux';
+import { getTwitter, getIsDataLoaded } from '../../../store/posts-data/selectors';
+import LoadingScreen from "../loading-screen";
+import { changeIsDataLoaded } from "../../../store/action";
 
-import data from "./tableData.js";
 
 const TwitterTable = () => {
-   return (
-      <Fragment>
-         {/*<PageTitle activeMenu="Datatable" motherMenu="Table" />*/}
-         <div className="row">
-         <div className="col-12">
-         <div className="card">
-            <div className="card-header">
-               <h4 className="card-title">Twitter</h4>
+   const twitter = useSelector(getTwitter);
+   const isDataLoaded = useSelector(getIsDataLoaded);
+
+   const dispatch = useDispatch();
+   const {country, page} = useParams();
+
+   useEffect(() => {
+      dispatch(fetchTwitterAction(page, country));
+    }, [country, page]);
+
+   return isDataLoaded ? (
+      <div className="col-12">
+      <div className="card">
+        <div className="card-header">
+          <h4 className="card-title">Twitter</h4>
+        </div>
+        <div className="card-body">
+          <div className="table-responsive">
+            <div id="job_data" className="dataTables_wrapper ">
+              <table
+                className="display w-100 dataTable "
+                id="example5"
+                role="grid"
+                aria-describedby="example5_info"
+              >
+                <thead>
+                  <tr role="row">
+                    <th className="sorting" style={{ width: "46px" }}>
+                      Number
+                    </th>
+                    <th className="sorting" style={{ width: "120px" }}>
+                      Title
+                    </th>
+                    <th className="sorting" style={{ width: "278px" }}>
+                      Twits
+                    </th>
+                    <th className="sorting" style={{ width: "70px" }}>
+                      Date
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {twitter.map((item, idx) => (
+                     <tr className="odd" role="row" key={idx}>
+                        <td>{item.id}</td>
+                        <td>{item.title}</td>
+                        <td>{item.tweets}</td>
+                        <td>{new Date(item.date).toString()}</td>
+                     </tr>
+                  ))}
+                </tbody>
+              </table>
+              <div className="d-sm-flex text-center justify-content-between align-items-center mt-3">
+                <div className="dataTables_info">
+                  Showing {page === '1' ? 1 : page > 1 ? `${page - 1}1` : ''} to {`${page}0`}
+                </div>
+                <div className="dataTables_paginate paging_simple_numbers" id="example5_paginate">
+					      <Link className="paginate_button previous disabled" to={`/${country}/twitter/${page !== '1' ? Number(page) - 1 : page}`} onClick={() => page !== '1' ? dispatch(changeIsDataLoaded(false)) : ''}>
+						      Previous
+					      </Link>
+					      <span>
+							   <Link to={`/${country}/twitter/${page}`} className={`paginate_button  current`}>
+								   {page}
+							   </Link>
+					      </span>
+					      <Link className="paginate_button next" to={`/${country}/twitter/${Number(page) + 1}`} onClick={() => dispatch(changeIsDataLoaded(false))}>
+						      Next
+					      </Link>
+                </div>
+              </div>
             </div>
-            <div className="card-body">
-               <Table responsive className="w-100">
-                  <div id="example_wrapper" className="dataTables_wrapper">
-                     <table
-                        id="example"
-                        className="display w-100 dataTable"
-                        role="grid"
-                        aria-describedby="example_info"
-                     >
-                        <thead>
-                           {data.twitterTable.columns.map((d, i) => (
-                              <th key={i}>{d}</th>
-                           ))}
-                        </thead>
-                        <tbody>
-                           {data.twitterTable.data.map((d, i) => (
-                              <tr key={i}>
-                                 {d.map((da, i) => (
-                                    <td key={i}>{da}</td>
-                                 ))}
-                              </tr>
-                           ))}
-                        </tbody>
-                        <tfoot>
-                           <tr role="row">
-                              {data.twitterTable.columns.map((d, i) => (
-                                 <th key={i}>{d}</th>
-                              ))}
-                           </tr>
-                        </tfoot>
-                     </table>
-                  </div>
-               </Table>
-            </div>
-         </div>
+          </div>
+        </div>
       </div>
-         </div>
-      </Fragment>
-   );
+    </div>
+   ) : <LoadingScreen />;
 };
 
 export default TwitterTable;

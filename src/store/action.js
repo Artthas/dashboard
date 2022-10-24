@@ -1,7 +1,19 @@
 import {createAction} from '@reduxjs/toolkit';
 
-export const loadAuGoogleNews = createAction(
-  (auGoogleNews) => ({
-    payload: auGoogleNews,
+export const loadGoogleNews = createAction(
+  (googleNews) => ({
+    payload: googleNews,
+  }),
+);
+
+export const loadTwitter = createAction(
+  (twitter) => ({
+    payload: twitter,
+  }),
+);
+
+export const changeIsDataLoaded = createAction(
+  (isTrue) => ({
+    payload: isTrue,
   }),
 );
