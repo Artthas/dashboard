@@ -1,10 +1,13 @@
 import {combineReducers} from 'redux';
-import {postsData} from './posts-data/posts-data';
+import {googleNewsData} from './google-news-data/google-news-data';
+import {twitterData} from './twitter-data/twitter-data';
 
 export const NameSpace = {
-  Posts: 'POSTS',
+  GoogleNews: 'GOOGLE_NEWS',
+  Twitter: 'TWITTER'
 }
 
 export const rootReducer = combineReducers({
-  [NameSpace.Posts]: postsData,
+  [NameSpace.GoogleNews]: googleNewsData,
+  [NameSpace.Twitter]: twitterData,
 });

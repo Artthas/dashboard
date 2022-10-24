@@ -5,7 +5,7 @@ import React, { Component } from "react";
 import PerfectScrollbar from "react-perfect-scrollbar";
 /// Link
 import { Link } from "react-router-dom";
-import {changeIsDataLoaded} from '../../../store/action';
+import {changeIsTwitterLoaded, changeIsGoogleNewsLoaded} from '../../../store/action';
 import { connect } from 'react-redux';
 
 
@@ -284,22 +284,22 @@ class SideBar extends Component {
               </Link>
               <ul >
                 <li>
-                    <Link className={`${  path === "au-google-news" ? "mm-active" : "" }`} onClick={() => {this.props.onClick();this.props.changeIsDataLoaded(false)}} to="/au/google-news/1">
+                    <Link className={`${  path === "au-google-news" ? "mm-active" : "" }`} onClick={() => {this.props.onClick();this.props.changeIsGoogleNewsLoaded(false)}} to="/au/google-news/1">
                         Australia
                     </Link>
                 </li>
                 <li>
-                    <Link className={`${ path === "uk-google-news" ? "mm-active" : "" }`} onClick={() => {this.props.onClick();this.props.changeIsDataLoaded(false)}} to="/uk/google-news/1">
+                    <Link className={`${ path === "uk-google-news" ? "mm-active" : "" }`} onClick={() => {this.props.onClick();this.props.changeIsGoogleNewsLoaded(false)}} to="/uk/google-news/1">
                         United Kingdom
                     </Link>
                 </li>
                 <li>
-                    <Link className={`${ path === "us-google-news" ? "mm-active" : "" }`} onClick={() => {this.props.onClick();this.props.changeIsDataLoaded(false)}} to="/us/google-news/1">
+                    <Link className={`${ path === "us-google-news" ? "mm-active" : "" }`} onClick={() => {this.props.onClick();this.props.changeIsGoogleNewsLoaded(false)}} to="/us/google-news/1">
                         United States
                     </Link>
                 </li>
                 <li>
-                    <Link className={`${ path === "nz-google-news" ? "mm-active" : "" }`} onClick={() => {this.props.onClick();this.props.changeIsDataLoaded(false)}} to="/nz/google-news/1">
+                    <Link className={`${ path === "nz-google-news" ? "mm-active" : "" }`} onClick={() => {this.props.onClick();this.props.changeIsGoogleNewsLoaded(false)}} to="/nz/google-news/1">
                         New Zealand
                     </Link>
                 </li>
@@ -340,22 +340,22 @@ class SideBar extends Component {
               </Link>
               <ul >
                 <li>
-                    <Link className={`${  path === "au-twitter" ? "mm-active" : "" }`} onClick={() => {this.props.onClick();this.props.changeIsDataLoaded(false)}} to="/au/twitter/1">
+                    <Link className={`${  path === "au-twitter" ? "mm-active" : "" }`} onClick={() => {this.props.onClick();this.props.changeIsTwitterLoaded(false)}} to="/au/twitter/1">
                         Australia
                     </Link>
                 </li>
                 <li>
-                    <Link className={`${ path === "uk-twitter" ? "mm-active" : "" }`} onClick={() => {this.props.onClick();this.props.changeIsDataLoaded(false)}} to="/uk/twitter/1">
+                    <Link className={`${ path === "uk-twitter" ? "mm-active" : "" }`} onClick={() => {this.props.onClick();this.props.changeIsTwitterLoaded(false)}} to="/uk/twitter/1">
                         United Kingdom
                     </Link>
                 </li>
                 <li>
-                    <Link className={`${ path === "us-twitter" ? "mm-active" : "" }`} onClick={() => {this.props.onClick();this.props.changeIsDataLoaded(false)}} to="/us/twitter/1">
+                    <Link className={`${ path === "us-twitter" ? "mm-active" : "" }`} onClick={() => {this.props.onClick();this.props.changeIsTwitterLoaded(false)}} to="/us/twitter/1">
                         United States
                     </Link>
                 </li>
                 <li>
-                    <Link className={`${ path === "nz-twitter" ? "mm-active" : "" }`} onClick={() => {this.props.onClick();this.props.changeIsDataLoaded(false)}} to="/nz/twitter/1">
+                    <Link className={`${ path === "nz-twitter" ? "mm-active" : "" }`} onClick={() => {this.props.onClick();this.props.changeIsTwitterLoaded(false)}} to="/nz/twitter/1">
                         New Zealand
                     </Link>
                 </li>
@@ -990,7 +990,8 @@ class SideBar extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-      changeIsDataLoaded: () => dispatch(changeIsDataLoaded(false))
+      changeIsGoogleNewsLoaded: () => dispatch(changeIsGoogleNewsLoaded(false)),
+      changeIsTwitterLoaded: () => dispatch(changeIsTwitterLoaded(false)),
   }
 };
 

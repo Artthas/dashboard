@@ -12,7 +12,13 @@ export const loadTwitter = createAction(
   }),
 );
 
-export const changeIsDataLoaded = createAction(
+export const changeIsGoogleNewsLoaded = createAction(
+  (isTrue) => ({
+    payload: isTrue,
+  }),
+);
+
+export const changeIsTwitterLoaded = createAction(
   (isTrue) => ({
     payload: isTrue,
   }),

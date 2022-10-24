@@ -2,14 +2,14 @@ import React, { useEffect } from "react";
 import { useParams, Link } from 'react-router-dom';
 import { fetchGoogleNewsAction } from '../../../store/api-actions';
 import { useSelector, useDispatch } from 'react-redux';
-import { getGoogleNews, getIsDataLoaded } from '../../../store/posts-data/selectors';
+import { getGoogleNews, getIsGoogleNewsLoaded } from '../../../store/google-news-data/selectors';
 import LoadingScreen from "../loading-screen";
-import { changeIsDataLoaded } from "../../../store/action";
+import { changeIsGoogleNewsLoaded } from "../../../store/action";
 
 
 const GoogleNewsTable = () => {
    const googleNews = useSelector(getGoogleNews);
-   const isDataLoaded = useSelector(getIsDataLoaded);
+   const isGoogleNewsLoaded = useSelector(getIsGoogleNewsLoaded);
 
    const dispatch = useDispatch();
    const {country, page} = useParams();
@@ -18,7 +18,7 @@ const GoogleNewsTable = () => {
       dispatch(fetchGoogleNewsAction(page, country));
     }, [country, page]);
 
-   return isDataLoaded ? (
+   return isGoogleNewsLoaded ? (
       <div className="col-12">
       <div className="card">
         <div className="card-header">
@@ -57,7 +57,7 @@ const GoogleNewsTable = () => {
                   Showing {page === '1' ? 1 : page > 1 ? `${page - 1}1` : ''} to {`${page}0`}
                 </div>
                 <div className="dataTables_paginate paging_simple_numbers" id="example5_paginate">
-					        <Link className="paginate_button previous disabled" to={`/${country}/google-news/${page !== '1' ? Number(page) - 1 : page}`} onClick={() => page !== '1' ? dispatch(changeIsDataLoaded(false)) : ''}>
+					        <Link className="paginate_button previous disabled" to={`/${country}/google-news/${page !== '1' ? Number(page) - 1 : page}`} onClick={() => page !== '1' ? dispatch(changeIsGoogleNewsLoaded(false)) : ''}>
 						        Previous
 					        </Link>
 					        <span>
@@ -65,7 +65,7 @@ const GoogleNewsTable = () => {
 								      {page}
 							      </Link>
 					        </span>
-					        <Link className="paginate_button next" to={`/${country}/google-news/${Number(page) + 1}`} onClick={() => dispatch(changeIsDataLoaded(false))}>
+					        <Link className="paginate_button next" to={`/${country}/google-news/${Number(page) + 1}`} onClick={() => dispatch(changeIsGoogleNewsLoaded(false))}>
 						        Next
 					        </Link>
                 </div>

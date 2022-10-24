@@ -2,14 +2,14 @@ import React, { useEffect } from "react";
 import { useParams, Link } from 'react-router-dom';
 import { fetchTwitterAction } from '../../../store/api-actions';
 import { useSelector, useDispatch } from 'react-redux';
-import { getTwitter, getIsDataLoaded } from '../../../store/posts-data/selectors';
+import { getTwitter, getIsTwitterLoaded } from '../../../store/twitter-data/selectors';
 import LoadingScreen from "../loading-screen";
-import { changeIsDataLoaded } from "../../../store/action";
+import { changeIsTwitterLoaded } from "../../../store/action";
 
 
 const TwitterTable = () => {
    const twitter = useSelector(getTwitter);
-   const isDataLoaded = useSelector(getIsDataLoaded);
+   const isTwitterLoaded = useSelector(getIsTwitterLoaded);
 
    const dispatch = useDispatch();
    const {country, page} = useParams();
@@ -18,7 +18,7 @@ const TwitterTable = () => {
       dispatch(fetchTwitterAction(page, country));
     }, [country, page]);
 
-   return isDataLoaded ? (
+   return isTwitterLoaded ? (
       <div className="col-12">
       <div className="card">
         <div className="card-header">
@@ -65,7 +65,7 @@ const TwitterTable = () => {
                   Showing {page === '1' ? 1 : page > 1 ? `${page - 1}1` : ''} to {`${page}0`}
                 </div>
                 <div className="dataTables_paginate paging_simple_numbers" id="example5_paginate">
-					      <Link className="paginate_button previous disabled" to={`/${country}/twitter/${page !== '1' ? Number(page) - 1 : page}`} onClick={() => page !== '1' ? dispatch(changeIsDataLoaded(false)) : ''}>
+					      <Link className="paginate_button previous disabled" to={`/${country}/twitter/${page !== '1' ? Number(page) - 1 : page}`} onClick={() => page !== '1' ? dispatch(changeIsTwitterLoaded(false)) : ''}>
 						      Previous
 					      </Link>
 					      <span>
@@ -73,7 +73,7 @@ const TwitterTable = () => {
 								   {page}
 							   </Link>
 					      </span>
-					      <Link className="paginate_button next" to={`/${country}/twitter/${Number(page) + 1}`} onClick={() => dispatch(changeIsDataLoaded(false))}>
+					      <Link className="paginate_button next" to={`/${country}/twitter/${Number(page) + 1}`} onClick={() => dispatch(changeIsTwitterLoaded(false))}>
 						      Next
 					      </Link>
                 </div>
