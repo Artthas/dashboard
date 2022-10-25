@@ -11,6 +11,7 @@ const twitterData = createReducer(initialState, (builder) => {
     .addCase(loadTwitter, (state, action) => {
       state.twitter = action.payload;
     })
+  builder
     .addCase(changeIsTwitterLoaded, (state, action) => {
       state.isTwitterLoaded = action.payload;
     });

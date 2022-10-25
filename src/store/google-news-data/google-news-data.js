@@ -11,6 +11,7 @@ const googleNewsData = createReducer(initialState, (builder) => {
     .addCase(loadGoogleNews, (state, action) => {
       state.googleNews = action.payload;
     })
+  builder
     .addCase(changeIsGoogleNewsLoaded, (state, action) => {
       state.isGoogleNewsLoaded = action.payload;
     });
